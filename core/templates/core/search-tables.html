@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<style>
+         table, th, td {border: 1px solid black; }
+         .floatLeft { width: 30%; float: right; padding:24px;}
+         .floatRight {width: 50%; float: left; }
+         tr { padding:460px;  }
+
+
+</style>
+
+<div class='container'>
+
+
+        <div>
+
+          <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <input type='text' name='s_word' placeholder="Search by ID">
+            <button type="submit" name="submit">Search</button>
+          </form>
+        </div>
+
+    <div>
+      <br>
+
+
+      {% if f %}
+      <div><p><b>{{ x }} subscriber(s)</b> as search result</p>
+      </div><br>
+      <div><a href='/pdf-download/'>Download Search as PDF</a></div>
+        <p>{{ f | safe }}</p>
+      {% endif %}
+      </div>
+      {% if s  %}
+      <div><p><b>{{ ss }} subscriber(s)</b> as search result</p>
+      </div><br>
+      <div><a href='/pdf-download/'>Download Search as PDF</a></div>
+        <p>{{ s | safe }}</p>
+      </div>
+
+
+
+
+  </div>
+    </div>
+    {% endif %}
+    
+</div>
+
+{% endblock %}

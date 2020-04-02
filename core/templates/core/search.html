@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class='card'>
+  <div class='container'>
+    <div class='jumbotron>'
+    <div>
+      <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <input type='text' name='s_word' placeholder="Search by ID">
+        <button type="submit" name="submit">Search</button>
+      </form>
+    </div><br>
+      {{ ht | safe }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class='card'>
+  <div class='container'>
+    <div class='jumbotron'>
+      <h3>Register Subscriber</h3><hr>
+    <div>
+      <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <ul>
+          <input type='text' name='id_no' placeholder="ID">
+          <input type='text' name='sub_name' placeholder="Full Name">
+          <input type='text' name='phone_no' placeholder="Phone Number">
+          <input type='text' name='no_of_plot' placeholder="NUmber of plot">
+          <input type='text' name='payable_amount' placeholder="Payable Amount">
+          <input type='text' name='payment_starting_date' placeholder="Payment STarting Date">
+          <input type='text' name='supposed_end_date' placeholder="Supposed End Date">
+          <input type='text' name='amount_paid' placeholder="Amount Paid">
+          <button type="submit" name="Submit">Submit</button>
+        </ul>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

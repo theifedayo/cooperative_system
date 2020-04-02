@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class='container'>
+
+
+        <div>
+
+          <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <input type='text' name='s_word' placeholder="Search.....">
+            <button type="submit" name="submit">Search</button>
+          </form>
+        </div>
+
+    <div>
+      <br>
+
+        <div><p><b>{{ length }} subscribers</b> have been registered</p>
+        </div><br>
+      <div class='floatRight'><a href='/file-download/'>Download as Excel file</a><br>
+          {{ html_table | safe }}
+      </div>
+      </div>
+
+
+
+  </div>
+    </div>
+
+{% endblock %}

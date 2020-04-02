@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>{{ sub_name }} Details</title>
+
+    </head>
+    <body>
+    <div class='container'>
+        <div class='wrapper'>
+            <div class='header'>
+                <h1><b> {{ sub_name }} DETAILS</b></h1>
+            </div>
+        <div>
+        <div class='details-left'>
+
+            SUSCRIBER'S ID: {{ sub_id }}<br/>
+            SUBSCRIBER'S NAME:  {{ sub_name }}<br/>
+            PHONE NUMBER: {{ phone_no }}<br/>
+
+          </div>
+          <div class='details-right'>
+             PAYMENT STATUS:{{ payment_status }}<br/>
+             NUMBER OF PLOT(S): {{ no_of_plot }}<br/>
+
+
+             PAYABLE AMOUNT: {{ payable_amount }}<br/>
+             INITIAL PAYMENT: {{ initial_payment }} <br/>
+             TOTAL AMOUNT PAID: {{ total_amount }}<br/>
+             BALANCE:{{ balance }} <br/>
+          </div>
+            <h2>DEDUCTIONS / REMITTANCE SCHEDULE</h2>
+        </div>
+        <table width='300' height='200' >
+          <td >{{ f | safe  }}</td>
+        </table>
+        <h3 style="color:#FF0000";>TOTAL AMOUNT PAID : {{ total_amount }}</h3>
+
+</html>

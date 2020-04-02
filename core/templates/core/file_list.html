@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class='container'>
+<div>
+<div class='card'>
+  <div class='container'>
+  {% if documents %}
+      {% for obj in documents %}
+        <a href='/files/{{obj.id}}'>{{ obj.doc }}</a><hr>
+      {% endfor %}
+  {% else %}
+    <h3>No file has been uploaded</h3>
+  {% endif %}
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

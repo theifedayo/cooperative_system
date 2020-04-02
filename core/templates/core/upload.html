@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class='container'>
+    <div class='card'>
+      <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+          {{ form }}
+      <button type='submit' name='submit'>Upload</button>
+      </form>
+</div><br>
+    <div class='container'><br>
+      {% if s %}
+      <p>This ID(s) does not exist in your base file</p><br>
+        {{ s | safe}}<br>
+      {% endif %}
+    </div>
+    {% if s2 %}
+    <p>This NAME(s) does not exist in your base file</p><br>
+    <small>Check for spellings,special characters such as hyphen,comma,fullstop</small><br>
+      {{ s2 | safe}}
+    {% endif %}
+    </div>
+
+
+{% endblock %}
