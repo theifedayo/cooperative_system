@@ -204,10 +204,7 @@ def upload(request, *args, **kwargs):
             obj = form.save(commit=False)
             obj.save()
             return redirect('/tables')
-        #else:
-        #    obj = form.save(commit=False)
-        #    obj.save()
-        #    return redirect('/tables')
+
     else:
         messages.success(request,"File nOT successfully uploaded")
     context = {'form': form}
